@@ -1,0 +1,21 @@
+{
+  "name": "rpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.0.13",
+    "discord-rpc": "^4.0.1",
+    "os": "^0.1.2",
+    "ps-node": "^0.1.6",
+    "ya-music": "^0.0.2",
+    "yandex-music-api": "^0.0.3",
+    "yandex-music-client": "^0.3.0",
+    "ym-api": "^1.2.1"
+  }
+}
