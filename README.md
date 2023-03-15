@@ -1,9 +1,11 @@
 # Активность Discord с Яндекс.Музыкой
 
-# Требуемые либы для работы:
-[@xhayper/discord-rpc](https://www.npmjs.com/package/@xhayper/discord-rpc)
+# Для работы требуется:
+- [Node](https://nodejs.org/en/)
 
-[yandex-music-client](https://www.npmjs.com/package/yandex-music-client)
+- [@xhayper/discord-rpc](https://www.npmjs.com/package/@xhayper/discord-rpc)
+
+- [yandex-music-client](https://www.npmjs.com/package/yandex-music-client)
 
 # Настройки в index.js
 1. ym_token:
