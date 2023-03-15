@@ -11,7 +11,7 @@
 
 2. device:
 Получение девайса:
-- Скачиваем HTTP Analyze
+- Скачиваем [HTTP Analyze](https://www.ieinspector.com/httpanalyzer/download.html)
 - Тыкаем Start слева сверху
 - Ищем яндекс музыку и копируем X-Yandex-Music-Device
 
