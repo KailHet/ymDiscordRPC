@@ -37,9 +37,9 @@ const client = new Client({
 
 // RPC
 client.on("ready", () => {
-  let details = ``
-  let artists = ``
-  let endTimestamp = ``
+  let details = `нет`
+  let artists = `нет`
+  let endTimestamp = `0`
   let buttons = []
   setInterval(async () => {
       Mclient.default
@@ -55,10 +55,13 @@ client.on("ready", () => {
           const currentTrack = (await Mclient.tracks.getTracks({"track-ids": [`${currentTrackId?.trackId}:${currentTrackId?.albumId}`]})).result[0]
           // console.log(currentTrack)
           for (let i = 0; i < currentTrack.artists.length; i++) {
-            console.log(artists)
-            console.log(i+1, currentTrack.artists.length)
-
-            if (!artists.includes(currentTrack.artists[i].name)) artists += currentTrack.artists[i].name
+            // console.log(artists)
+            // console.log(i+1, currentTrack.artists.length)
+            
+            if (!artists.includes(currentTrack.artists[i].name)) {
+              if (i == 0 && !artists.startsWith(currentTrack.artists[i].name)) artists = ``
+              artists += currentTrack.artists[i].name
+            }
             if (artists.split(`, `).length !== currentTrack.artists.length && currentTrack.artists.length !== i+1) artists += `, `
           }
 
@@ -77,19 +80,21 @@ client.on("ready", () => {
             ]
             // if (buttons.length > 2) buttons.splice(1, 1)
           }
+          client.user?.setActivity({
+            details: details,
+            state: artists,
+            endTimestamp: endTimestamp,
+            largeImageKey: `ym`,
+            smallImageKey: `music`,
+            smallImageText: `Слушаю музыку`,
+            buttons: buttons
+          })
         }
 
-        client.user?.setActivity({
-          details: details,
-          state: artists,
-          endTimestamp: endTimestamp,
-          largeImageKey: `ym`,
-          smallImageKey: `music`,
-          smallImageText: `Слушаю музыку`,
-          buttons: buttons
-        })
+
       })
-  }, 1000);
+      .catch(e => {})
+  }, 500);
   console.log(`Rich Presence Активна!`)
 })
 
