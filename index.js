@@ -80,15 +80,21 @@ client.on("ready", () => {
             ]
             // if (buttons.length > 2) buttons.splice(1, 1)
           }
-          client.user?.setActivity({
-            details: details,
-            state: artists,
-            endTimestamp: endTimestamp,
-            largeImageKey: `ym`,
-            smallImageKey: `music`,
-            smallImageText: `Слушаю музыку`,
-            buttons: buttons
-          })
+
+          if (endTimestamp > Date.now()) {
+            client.user?.setActivity({
+              details: details,
+              state: artists,
+              endTimestamp: endTimestamp,
+              largeImageKey: `ym`,
+              smallImageKey: `music`,
+              smallImageText: `Слушаю музыку`,
+              buttons: buttons,
+              // type: 3
+            })
+          } else {
+            client.user?.clearActivity()
+          }
         }
 
 
