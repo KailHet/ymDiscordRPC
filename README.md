@@ -1,5 +1,7 @@
 # Активность Discord с Яндекс.Музыкой
 
+![preview](https://media.discordapp.net/attachments/1063748127254908988/1085630871614279761/image.png)
+
 # Для работы требуется:
 - [Node](https://nodejs.org/en/)
 
