@@ -1,5 +1,8 @@
 # Активность Discord с Яндекс.Музыкой
 
+# Требуемые либы для работы:
+[@xhayper/discord-rpc](https://www.npmjs.com/package/@xhayper/discord-rpc)
+[yandex-music-client](https://www.npmjs.com/package/yandex-music-client)
 
 # Известные проблемы:
 1. Исполнители в списке повторяются, из-за чего происходит краш (содержит более 128 символов)
