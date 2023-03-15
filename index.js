@@ -49,15 +49,11 @@ client.on("ready", () => {
         const {tracks, currentIndex} = currentQueue.result;
         const currentTrackId = tracks[currentIndex ?? 0];
         
-        // console.log(currentQueue.result)
 
         if (currentTrackId !== undefined) {
           const currentTrack = (await Mclient.tracks.getTracks({"track-ids": [`${currentTrackId?.trackId}:${currentTrackId?.albumId}`]})).result[0]
-          // console.log(currentTrack)
+          
           for (let i = 0; i < currentTrack.artists.length; i++) {
-            // console.log(artists)
-            // console.log(i+1, currentTrack.artists.length)
-            
             if (!artists.includes(currentTrack.artists[i].name)) {
               if (i == 0 && !artists.startsWith(currentTrack.artists[i].name)) artists = ``
               artists += currentTrack.artists[i].name
@@ -67,10 +63,6 @@ client.on("ready", () => {
 
           if (details !== currentTrack.title) {
             details = currentTrack.title
-            // if (artists.length >= 128) {
-            //   artists.split('').slice(-125)
-            //   artists += `...`
-            // }
             endTimestamp = Date.now() + currentTrack.durationMs
             buttons = [
               {
@@ -78,7 +70,6 @@ client.on("ready", () => {
                 url: `https://music.yandex.ru/album/${currentTrackId?.albumId}/track/${currentTrackId?.trackId}`
               }
             ]
-            // if (buttons.length > 2) buttons.splice(1, 1)
           }
 
           if (endTimestamp > Date.now()) {
