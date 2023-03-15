@@ -2,6 +2,7 @@
 
 # Требуемые либы для работы:
 [@xhayper/discord-rpc](https://www.npmjs.com/package/@xhayper/discord-rpc)
+
 [yandex-music-client](https://www.npmjs.com/package/yandex-music-client)
 
 # Известные проблемы:
