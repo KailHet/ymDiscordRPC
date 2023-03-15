@@ -16,7 +16,6 @@ let clientId = "1084179647874474125" // Название: Yandex Music
 // Если не хотите консоль на рабочем столе - ЗАПУСКАЙТЕ start.vbs!!!!!!!!!!!!
 
 const { Client } = require("@xhayper/discord-rpc");
-var ps = require('ps-node');
 const { YandexMusicClient } = require('yandex-music-client/YandexMusicClient')
 
 const Mclient = new YandexMusicClient({
