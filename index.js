@@ -55,27 +55,26 @@ client.on("ready", () => {
           const currentTrack = (await Mclient.tracks.getTracks({"track-ids": [`${currentTrackId?.trackId}:${currentTrackId?.albumId}`]})).result[0]
           // console.log(currentTrack)
           for (let i = 0; i < currentTrack.artists.length; i++) {
-            artists += currentTrack.artists[i].name
-            if (currentTrack.artists.length !== i+1) artists += `, `
+            console.log(artists)
+            console.log(i+1, currentTrack.artists.length)
+
+            if (!artists.includes(currentTrack.artists[i].name)) artists += currentTrack.artists[i].name
+            if (artists.split(`, `).length !== currentTrack.artists.length && currentTrack.artists.length !== i+1) artists += `, `
           }
 
           if (details !== currentTrack.title) {
-            // icon = `music`
-            // text = `Слушаю музыку`
             details = currentTrack.title
             // if (artists.length >= 128) {
             //   artists.split('').slice(-125)
             //   artists += `...`
             // }
-            // state = artists
-            // image = `ym`
             endTimestamp = Date.now() + currentTrack.durationMs
-            buttons.push(
+            buttons = [
               {
                 label: `Ссылка на трек`,
                 url: `https://music.yandex.ru/album/${currentTrackId?.albumId}/track/${currentTrackId?.trackId}`
               }
-            )
+            ]
             // if (buttons.length > 2) buttons.splice(1, 1)
           }
         }
