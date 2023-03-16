@@ -24,6 +24,7 @@
 3. clientId:
 Где взять clientId?
 - Заходим на [Discord Developer Portal](https://discord.com/developers/applications) в приложение, если его нет - создаем. **Название приложения это заголовок RPC**
+Если не хотите создавать приложение - по умолчанию будет заголовок "Yandex Music"
 - Тыкаем на вкладку OAuth2 слева
 - Копируем Client ID (он общедоступный, скрывать не надо)
 
