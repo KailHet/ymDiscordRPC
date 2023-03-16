@@ -21,7 +21,7 @@
 
 3. clientId:
 Где взять clientId?
-- Заходим на Discord Developer Portal в приложение (название приложения это заголовок RPC)
+- Заходим на [Discord Developer Portal](https://discord.com/developers/applications) в приложение (название приложения это заголовок RPC)
 - Тыкаем на вкладку OAuth2 слева
 - Копируем Client ID (он общедоступный, скрывать не надо)
 
