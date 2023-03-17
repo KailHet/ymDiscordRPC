@@ -77,7 +77,7 @@ client.on("ready", () => {
             if (artists.split(`, `).length !== currentTrack.artists.length && currentTrack.artists.length !== i+1) artists += `, `
           }
 
-          if (details !== currentTrack.title) {
+          if (activity?.details !== currentTrack.title) {
             endTimestamp = Date.now() + currentTrack.durationMs // Время до окончания трека (не в активности)
 
             activity.details = currentTrack.title
